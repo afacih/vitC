@@ -3,19 +3,20 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <!-- --- SEO OPTIMIZATION STRATEGY (Global & Local Keywords) --- --><!-- UPDATED: Title tag now fully in English for global SEO focus --><title>VoidC | Custom Web Application Service & Full-Stack Development Agency</title>
+    <!-- --- SEO OPTIMIZATION STRATEGY (Global & Local Keywords) --- --><title>VoidC | Custom Web Application Service & Full-Stack Development Agency</title>
     
     <meta name="description" content="VoidC is a professional custom web development service provider, specializing in full-stack web applications and adaptive digital architecture. From high-performance MVP websites to complex enterprise platforms.">
-    <meta name="keywords" content="custom web application service, full-stack development, web development agency, enterprise web solutions, MVP websites, custom software development, digital architecture, high-performance web apps">
+    <meta name="keywords" content="custom web application service, full-stack development, web development agency, enterprise web solutions, MVP websites, custom software development, digital architecture, high-performance web apps, jasa build website, jasa pembuatan website, web kustom, pengembangan web full-stack">
     <meta name="robots" content="index, follow">
-    <link rel="canonical" href="https://yourwebsite.com/"/> 
+    <link rel="canonical" href="https://vit-c.vercel.app/"/> 
     
-    <!-- ADDED: Favicon for your logo in the browser tab --><link rel="icon" type="image/png" href="path/to/your/logo.png"> 
+    <!-- FAVICON / LOGO IN BROWSER TAB (UPDATE THIS PATH TO YOUR LOGO) --><link rel="icon" type="image/svg+xml" href="voidc-logo.svg"> 
     
-    <!-- Open Graph (English for Global Platforms) --><meta property="og:locale" content="en_US" /> <!-- Changed to en_US for global consistency --><meta property="og:type" content="website" />
+    <!-- Open Graph (English for Global Platforms) --><meta property="og:locale" content="en_US" />
+    <meta property="og:type" content="website" />
     <meta property="og:title" content="VoidC | Professional Custom Web Application Service (Full-Stack Development)" />
     <meta property="og:description" content="A reliable custom web development service provider, specializing in high-performance MVP, e-commerce, and Enterprise systems." />
-    <meta property="og:url" content="https://yourwebsite.com/" />
+    <meta property="og:url" content="https://vit-c.vercel.app/" />
     <!-- END SEO OPTIMIZATION --><!-- Fonts --><link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500&family=Syne:wght@400;600;700;800&display=swap" rel="stylesheet">
@@ -235,24 +236,27 @@
         <!-- CONTENT AREA --><main class="relative flex-1 w-full max-w-7xl mx-auto">
 
             <!-- VIEW 1: HOME (Emphasized Web Service - LAYOUT UPDATED) --><div id="view-home" class="view-container active items-center justify-center text-left">
-                <!-- Hapus items-end untuk memposisikan konten di tengah layar secara vertikal --><!-- ADDED -mt-16 to shift content UP and compensate for large font --><div class="grid grid-cols-1 md:grid-cols-2 gap-10 w-full max-w-7xl px-4 md:px-8 -mt-16">
+                <!-- Removed -mt-16. Adjusted padding and gap in grid --><div class="grid grid-cols-1 md:grid-cols-2 gap-8 md:gap-10 w-full max-w-7xl px-4 md:px-8">
                     
-                    <!-- KIRI (Left): Judul Utama --><!-- Removed py-8 as the outer container now controls vertical offset --><div class="flex flex-col justify-center h-full">
-                        <!-- REMOVED leading-[0.9] to fix clipping on the top/bottom of the huge text --><h1 class="text-[14vw] sm:text-[12vw] md:text-[11vw] font-display font-bold text-white tracking-tighter mb-4 md:mb-0">
+                    <!-- KIRI (Left): Judul Utama -->
+                    <div class="flex flex-col justify-center h-full pt-8 md:pt-0">
+                        <h1 class="text-[14vw] sm:text-[12vw] md:text-[9vw] font-display font-bold text-white tracking-tighter">
                             <span class="mask-text"><span class="reveal-home magnetic-text">CUSTOM</span></span>
-                            <span class="mask-text"><span class="reveal-home magnetic-text text-transparent bg-clip-text bg-gradient-to-r from-gray-100 to-gray-600">WEB BUILD</span></span>
+                            <!-- Dipastikan WEB dan BUILD adalah elemen magnetik independen -->
+                            <span class="mask-text"><span class="reveal-home magnetic-text text-transparent bg-clip-text bg-gradient-to-r from-gray-100 to-gray-600">WEB</span></span>
+                            <span class="mask-text"><span class="reveal-home magnetic-text text-transparent bg-clip-text bg-gradient-to-r from-gray-100 to-gray-600">BUILD</span></span>
                         </h1>
                     </div>
                     
-                    <!-- KANAN (Right): Deskripsi dan Tombol --><!-- Removed py-8 and kept justify-start --><div class="flex flex-col justify-start h-full">
-                        <p class="text-xl md:text-2xl text-gray-400 max-w-lg mb-12 font-light leading-relaxed reveal-home-opacity magnetic-text">
-                            We are a <span class="font-bold text-white">Full-Stack Web Application Service</span>, specializing in adaptive architecture—from simple MVP websites to complex enterprise platforms. We analyze your core business logic, design scalable database schemas, and deploy high-performance, future-proof systems customized exactly to your needs. Our focus is on seamless user experience, maximum security, and robust infrastructure, ensuring your application can handle massive growth and complex data operations. Let's build the next generation of your digital presence.
+                    <!-- KANAN (Right): Deskripsi dan Tombol --><div class="flex flex-col justify-center h-full pb-8 md:pb-0">
+                        <p class="text-lg md:text-xl text-gray-400 max-w-md mb-8 font-light leading-relaxed reveal-home-opacity magnetic-text">
+                            We are a <span class="font-bold text-white">Full-Stack Web Application Service</span>, specializing in adaptive architecture—from simple MVP websites to complex enterprise platforms.
                         </p>
                         <div class="flex gap-6 reveal-home-opacity">
-                            <button onclick="switchView('work')" class="bg-white text-black px-10 py-4 rounded-full font-bold text-sm uppercase tracking-widest hover:scale-105 transition-transform shadow-[0_0_30px_rgba(255,255,255,0.3)] magnetic-text" data-hover>
+                            <button onclick="switchView('work')" class="bg-white text-black px-8 py-3 rounded-full font-bold text-sm uppercase tracking-widest hover:scale-105 transition-transform shadow-[0_0_30px_rgba(255,255,255,0.3)] magnetic-text" data-hover>
                                 Enter Archive
                             </button>
-                            <button onclick="switchView('services')" class="border border-white/30 text-white px-10 py-4 rounded-full font-bold text-sm uppercase tracking-widest hover:bg-white/10 transition-colors magnetic-text" data-hover>
+                            <button onclick="switchView('services')" class="border border-white/30 text-white px-8 py-3 rounded-full font-bold text-sm uppercase tracking-widest hover:bg-white/10 transition-colors magnetic-text" data-hover>
                                 Capabilities
                             </button>
                         </div>
@@ -402,10 +406,10 @@
         let particles = [];
         
         // Configuration Background
-        const particleCount = 200; // Lebih banyak partikel
-        const connectionDistance = 120; // Jarak koneksi sedikit lebih pendek
-        const mouseDistance = 80; // Radius deteksi mouse lebih kecil
-        const repelForce = 5; // Gaya dorong mouse lebih kuat
+        const particleCount = 200; 
+        const connectionDistance = 120; 
+        const mouseDistance = 80; 
+        const repelForce = 5; 
 
         let mouse = { x: null, y: null };
         window.addEventListener('mousemove', (e) => {
@@ -422,10 +426,10 @@
             constructor() {
                 this.x = Math.random() * width;
                 this.y = Math.random() * height;
-                this.vx = (Math.random() - 0.5) * 0.8; // Kecepatan sedikit ditingkatkan
+                this.vx = (Math.random() - 0.5) * 0.8; 
                 this.vy = (Math.random() - 0.5) * 0.8;
-                this.size = Math.random() * 2 + 0.5; // Ukuran partikel lebih bervariasi
-                this.baseAlpha = Math.random() * 0.8 + 0.3; // Opasitas partikel lebih jelas
+                this.size = Math.random() * 2 + 0.5; 
+                this.baseAlpha = Math.random() * 0.8 + 0.3; 
             }
 
             update() {
@@ -482,8 +486,8 @@
                     if(distance < connectionDistance){
                         ctx.beginPath();
                         let opacity = 1 - (distance/connectionDistance);
-                        ctx.strokeStyle = `rgba(255, 255, 255, ${opacity * 0.4})`; // Opasitas garis lebih tebal
-                        ctx.lineWidth = 1; // Ketebalan garis ditingkatkan
+                        ctx.strokeStyle = `rgba(255, 255, 255, ${opacity * 0.4})`; 
+                        ctx.lineWidth = 1; 
                         ctx.moveTo(particles[i].x, particles[i].y);
                         ctx.lineTo(particles[j].x, particles[j].y);
                         ctx.stroke();
@@ -525,7 +529,7 @@
             }, 300);
         }
 
-        // --- 4. HOVER LOGIC & MAGNETIC TEXT ---
+        // --- 4. HOVER LOGIC & MAGNETIC TEXT (EFEK PALING AGRESIF & DINAMIS) ---
         const hoverImg = document.getElementById('hover-preview');
         let isHoveringWork = false;
 
@@ -542,12 +546,12 @@
 
         // Magnetic Text Logic
         const magneticElements = document.querySelectorAll('.magnetic-text');
-        const magneticForce = 0.2; // Kekuatan magnetik
+        const magneticForce = 0.35; // Kekuatan magnetik DITINGKATKAN 
 
         window.addEventListener('mousemove', (e) => {
             // Cursor logic
             gsap.to('.cursor-dot', { x: e.clientX, y: e.clientY, duration: 0 });
-            gsap.to('.cursor-circle', { x: e.clientX, y: e.clientY, duration: 0.15 });
+            gsap.to('.cursor-circle', { x: e.clientX, y: e.clientY, duration: 0.1 }); 
 
             // Hover image logic
             if(isHoveringWork) {
@@ -559,7 +563,7 @@
                 });
             }
 
-            // Magnetic Text (EASING DITINGKATKAN UNTUK KINERJA LEBIH BAIK/SMOOTH)
+            // Magnetic Text (Menggunakan Easing Elastic untuk efek pantulan agresif)
             magneticElements.forEach(el => {
                 const rect = el.getBoundingClientRect();
                 const elX = rect.left + rect.width / 2;
@@ -567,23 +571,19 @@
                 
                 const dx = e.clientX - elX;
                 const dy = e.clientY - elY;
+                
+                // Calculate magnetic force effect
                 const distance = Math.sqrt(dx * dx + dy * dy);
-
-                if (distance < (rect.width / 2 + 50)) { // Radius deteksi magnetik
-                    gsap.to(el, {
-                        x: dx * magneticForce,
-                        y: dy * magneticForce,
-                        duration: 0.4, // Sedikit lebih cepat
-                        ease: "power3.out" // Easing yang lebih smooth
-                    });
+                
+                if (distance < 100) { 
+                    const tx = dx * magneticForce;
+                    const ty = dy * magneticForce;
+                    
+                    // TARIKAN AGRESIF: Lebih lama dengan efek pantulan/elastic
+                    gsap.to(el, { x: tx, y: ty, duration: 0.8, ease: "elastic.out(1, 0.3)" });
                 } else {
-                    // FIX: Melengkapi panggilan gsap dan menutup kurung yang hilang
-                    gsap.to(el, {
-                        x: 0,
-                        y: 0,
-                        duration: 0.6,
-                        ease: "power3.out"
-                    });
+                    // KEMBALI CEPAT & BERSIH: Menggunakan power4.out yang sangat responsif
+                    gsap.to(el, { x: 0, y: 0, duration: 0.5, ease: "power4.out" });
                 }
             });
         });
