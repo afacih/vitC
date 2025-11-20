@@ -1,0 +1,597 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <!-- --- SEO OPTIMIZATION STRATEGY (Global & Local Keywords) --- -->
+    <title>VoidC | Jasa Build Website Custom, Web App Full-Stack Terbaik (Custom Web Development Service)</title>
+
+    <meta name="description" content="VoidC adalah layanan jasa build website dan jasa pembuatan web aplikasi Full-Stack kustom yang profesional dan terpercaya. We are a reliable custom web development service provider, specializing in high-performance MVP, e-commerce, and Enterprise systems.">
+    <meta name="keywords" content="jasa build website, jasa buat website, jasa pembuatan website, web app custom, full-stack development, website enterprise, custom web development service, full stack web application, best web developer indonesia, high-performance web app">
+    <meta name="robots" content="index, follow">
+    <link rel="canonical" href="https://yourwebsite.com/"/>
+
+    <!-- Open Graph (English for Global Platforms) -->
+    <meta property="og:locale" content="id_ID" />
+    <meta property="og:type" content="website" />
+    <meta property="og:title" content="VoidC | Professional Custom Web Application Service (Full-Stack Development)" />
+    <meta property="og:description" content="A reliable custom web development service provider, specializing in high-performance MVP, e-commerce, and Enterprise systems." />
+    <meta property="og:url" content="https://yourwebsite.com/" />
+    <!-- END SEO OPTIMIZATION -->
+
+    <!-- Fonts --><link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500&family=Syne:wght@400;600;700;800&display=swap" rel="stylesheet">
+
+    <!-- Tailwind CSS --><script src="https://cdn.tailwindcss.com"></script>
+
+    <!-- GSAP --><script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/gsap.min.js"></script>
+
+    <style>
+        :root {
+            --bg-color: #050505;
+            --text-main: #e0e0e0;
+            --accent: #ffffff;
+        }
+
+        body {
+            margin: 0;
+            padding: 0;
+            overflow: hidden;
+            font-family: 'Inter', sans-serif;
+            background-color: var(--bg-color);
+            color: var(--text-main);
+            height: 100vh;
+            width: 100vw;
+            cursor: none;
+        }
+
+        h1, h2, h3, .font-display { font-family: 'Syne', sans-serif; }
+
+        /* --- 1. CINEMATIC INTRO (PRELOADER) --- */
+        #preloader {
+            position: fixed;
+            top: 0; left: 0;
+            width: 100%; height: 100%;
+            background: #000;
+            z-index: 9999;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            flex-direction: column;
+        }
+
+        .loader-text {
+            font-family: 'Syne', sans-serif;
+            font-size: 4rem;
+            font-weight: 800;
+            color: #fff;
+        }
+
+        .loader-bar {
+            width: 200px;
+            height: 2px;
+            background: rgba(255,255,255,0.2);
+            margin-top: 20px;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .loader-progress {
+            position: absolute;
+            top: 0; left: 0;
+            height: 100%;
+            background: #fff;
+            width: 0%;
+        }
+
+        /* --- 2. BACKGROUND CANVAS (NEURAL NETWORK) --- */
+        #neural-canvas {
+            position: fixed;
+            top: 0; left: 0;
+            width: 100%; height: 100%;
+            z-index: -1;
+            opacity: 0.8; /* Opacity ditingkatkan */
+        }
+
+        /* NOISE OVERLAY */
+        .noise-overlay {
+            position: fixed;
+            top: 0; left: 0;
+            width: 100%; height: 100%;
+            z-index: 0;
+            pointer-events: none;
+            opacity: 0.1; /* Opacity noise ditingkatkan */
+            background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 200 200' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='noiseFilter'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.8' numOctaves='3' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23noiseFilter)'/%3E%3C/svg%3E");
+        }
+
+        /* GLASS PANEL DARK MODE */
+        .glass-panel {
+            background: rgba(20, 20, 20, 0.6); /* Background lebih solid */
+            backdrop-filter: blur(15px);
+            -webkit-backdrop-filter: blur(15px);
+            border: 1px solid rgba(255, 255, 255, 0.15); /* Border lebih jelas */
+            box-shadow: 0 20px 50px rgba(0, 0, 0, 0.6);
+            color: #fff;
+        }
+
+        /* --- 3. NAVIGATION & VIEWS --- */
+        .view-container {
+            position: absolute;
+            top: 0; left: 0;
+            width: 100%; height: 100%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            opacity: 0;
+            visibility: hidden;
+            padding: 2rem;
+            z-index: 5;
+        }
+
+        .view-container.active {
+            opacity: 1;
+            visibility: visible;
+            z-index: 10;
+        }
+
+        /* --- 4. CUSTOM CURSOR (GLOWING) --- */
+        .cursor-dot {
+            width: 6px; height: 6px; background: #fff;
+            position: fixed; border-radius: 50%; pointer-events: none; z-index: 9999;
+            transform: translate(-50%, -50%);
+            box-shadow: 0 0 10px #fff;
+        }
+        .cursor-circle {
+            width: 40px; height: 40px; border: 1px solid rgba(255,255,255,0.4); /* Border lebih jelas */
+            position: fixed; border-radius: 50%; pointer-events: none; z-index: 9998;
+            transform: translate(-50%, -50%);
+            transition: width 0.2s, height 0.2s, background 0.2s;
+        }
+
+        /* --- 5. WORK GALLERY --- */
+        .work-list-item {
+            position: relative;
+            border-bottom: 1px solid rgba(255,255,255,0.2); /* Border lebih jelas */
+            transition: all 0.3s;
+            cursor: pointer;
+        }
+        .work-list-item:hover {
+            padding-left: 30px;
+            border-color: #fff;
+        }
+        .work-list-item:hover h3 {
+            color: #fff;
+            text-shadow: 0 0 20px rgba(255,255,255,0.6); /* Glow lebih kuat */
+        }
+
+        /* Floating Image */
+        .hover-image {
+            position: fixed;
+            width: 400px; height: 280px;
+            top: 50%; left: 50%;
+            background-size: cover; background-position: center;
+            pointer-events: none;
+            transform: translate(-50%, -50%) scale(0);
+            opacity: 0; z-index: 50;
+            border-radius: 4px;
+            box-shadow: 0 30px 60px rgba(0,0,0,0.8);
+            border: 1px solid rgba(255,255,255,0.3); /* Border lebih jelas */
+        }
+
+        /* --- 6. SERVICES GRID --- */
+        .service-card:hover {
+            background: rgba(255,255,255,0.15); /* Background lebih solid */
+            transform: translateY(-10px);
+            border-color: rgba(255,255,255,0.4); /* Border lebih jelas */
+        }
+
+        /* Utility */
+        .nav-btn.active {
+            background-color: #fff;
+            color: #000;
+            box-shadow: 0 0 20px rgba(255,255,255,0.6); /* Shadow lebih kuat */
+        }
+
+        .mask-text {
+            overflow: hidden;
+            display: block;
+        }
+        .mask-text span {
+            display: block;
+            transform: translateY(100%);
+        }
+
+        /* Magnetic Text Styles */
+        .magnetic-text {
+            display: inline-block; /* Agar transform bisa bekerja */
+            will-change: transform; /* Memberi tahu browser untuk optimasi */
+        }
+    </style>
+</head>
+<body>
+
+    <!-- 1. CINEMATIC INTRO LAYER --><div id="preloader">
+        <div class="loader-text">0%</div>
+        <div class="loader-bar">
+            <div class="loader-progress"></div>
+        </div>
+    </div>
+
+    <!-- 2. BACKGROUND ALIVE (NEURAL NETWORK) --><canvas id="neural-canvas"></canvas>
+    <div class="noise-overlay"></div>
+
+    <!-- CURSOR --><div class="cursor-dot"></div>
+    <div class="cursor-circle"></div>
+
+    <!-- HOVER IMAGE ELEMENT --><div class="hover-image" id="hover-preview"></div>
+
+    <!-- MAIN LAYOUT --><div class="fixed inset-0 flex flex-col">
+
+        <!-- TOP BAR (Brand: VoidC) --><header class="flex justify-between items-center p-8 z-50 mix-blend-difference">
+            <div class="text-2xl font-bold font-display tracking-tighter text-white magnetic-text" data-hover>VoidC.</div>
+            <a href="https://wa.me/6287852865967?text=Hello,%20I%20want%20to%20start%20a%20project" target="_blank" class="px-6 py-2 rounded-full text-xs font-bold border border-white/30 text-white hover:bg-white hover:text-black transition-all tracking-widest uppercase magnetic-text" data-hover>
+                Initialize Project
+            </a>
+        </header>
+
+        <!-- CONTENT AREA --><main class="relative flex-1 w-full max-w-7xl mx-auto">
+
+            <!-- VIEW 1: HOME (Emphasized Web Service) --><div id="view-home" class="view-container active flex-col items-start justify-center text-left">
+                <h1 class="text-[11vw] leading-[0.85] font-display font-bold text-white mb-8 tracking-tighter">
+                    <span class="mask-text"><span class="reveal-home magnetic-text">CUSTOM</span></span>
+                    <span class="mask-text"><span class="reveal-home magnetic-text text-transparent bg-clip-text bg-gradient-to-r from-gray-100 to-gray-600">WEB BUILD</span></span>
+                </h1>
+                <p class="text-xl md:text-2xl text-gray-400 max-w-xl mb-12 font-light leading-relaxed reveal-home-opacity magnetic-text">
+                    We are a <span class="font-bold text-white">Full-Stack Web Application Service</span>, specializing in adaptive architecture—from simple MVP websites to complex enterprise platforms.
+                </p>
+                <div class="flex gap-6 reveal-home-opacity">
+                    <button onclick="switchView('work')" class="bg-white text-black px-10 py-4 rounded-full font-bold text-sm uppercase tracking-widest hover:scale-105 transition-transform shadow-[0_0_30px_rgba(255,255,255,0.3)] magnetic-text" data-hover>
+                        Enter Archive
+                    </button>
+                    <button onclick="switchView('services')" class="border border-white/30 text-white px-10 py-4 rounded-full font-bold text-sm uppercase tracking-widest hover:bg-white/10 transition-colors magnetic-text" data-hover>
+                        Capabilities
+                    </button>
+                </div>
+            </div>
+
+            <!-- VIEW 2: WORK (Interactive) --><div id="view-work" class="view-container flex-col justify-center items-start">
+                <div class="w-full max-w-5xl">
+                    <h2 class="text-xs font-bold uppercase tracking-[0.5em] text-gray-500 mb-12">Selected Archives</h2>
+
+                    <!-- List Item 1 --><div class="work-list-item group py-10 flex justify-between items-center"
+                         onmouseenter="showImage('https://images.unsplash.com/photo-1550684848-fac1c5b4e853?q=80&w=2000&auto=format&fit=crop')"
+                         onmouseleave="hideImage()"
+                         onclick="window.open('https://wa.me/6287852865967?text=I%20like%20the%20Project%20Obsidian', '_blank')"
+                         data-hover>
+                        <h3 class="text-5xl md:text-7xl font-display font-bold text-gray-500 transition-colors magnetic-text">Obsidian</h3>
+                        <span class="text-sm font-mono text-gray-600 group-hover:text-white">WEB / AI</span>
+                    </div>
+
+                    <!-- List Item 2 --><div class="work-list-item group py-10 flex justify-between items-center"
+                         onmouseenter="showImage('https://images.unsplash.com/photo-1511447333015-45b65e60f6d5?q=80&w=2000&auto=format&fit=crop')"
+                         onmouseleave="hideImage()"
+                         onclick="window.open('https://wa.me/6287852865967?text=I%20like%20the%20Project%20Nebula', '_blank')"
+                         data-hover>
+                        <h3 class="text-5xl md:text-7xl font-display font-bold text-gray-500 transition-colors magnetic-text">Nebula</h3>
+                        <span class="text-sm font-mono text-gray-600 group-hover:text-white">IMMERSIVE</span>
+                    </div>
+
+                    <!-- List Item 3 --><div class="work-list-item group py-10 flex justify-between items-center"
+                         onmouseenter="showImage('https://images.unsplash.com/photo-1550751827-4bd374c3f58b?q=80&w=2000&auto=format&fit=crop')"
+                         onmouseleave="hideImage()"
+                         onclick="window.open('https://wa.me/6287852865967?text=I%20like%20the%20Project%20Cybercore', '_blank')"
+                         data-hover>
+                        <h3 class="text-5xl md:text-7xl font-display font-bold text-gray-500 transition-colors magnetic-text">Cybercore</h3>
+                        <span class="text-sm font-mono text-gray-600 group-hover:text-white">FINANCE</span>
+                    </div>
+
+                    <!-- List Item 4 --><div class="work-list-item group py-10 flex justify-between items-center"
+                         onmouseenter="showImage('https://images.unsplash.com/photo-1526374965328-7f61d4dc18c5?q=80&w=2000&auto=format&fit=crop')"
+                         onmouseleave="hideImage()"
+                         onclick="window.open('https://wa.me/6287852865967?text=I%20like%20the%20Project%20Void', '_blank')"
+                         data-hover>
+                        <h3 class="text-5xl md:text-7xl font-display font-bold text-gray-500 transition-colors magnetic-text">Void</h3>
+                        <span class="text-sm font-mono text-gray-600 group-hover:text-white">PORTFOLIO</span>
+                    </div>
+                </div>
+            </div>
+
+            <!-- VIEW 3: SERVICES (Full-Stack Tiers Updated) --><div id="view-services" class="view-container flex-col justify-center">
+                <h2 class="text-5xl font-display font-bold mb-16 text-center text-white magnetic-text">Full-Stack Architecture Services</h2>
+                <div class="grid grid-cols-1 md:grid-cols-3 gap-8 w-full max-w-6xl">
+
+                    <!-- Base Stack (MVP) --><div class="service-card glass-panel p-10 rounded-sm transition-all duration-300 cursor-pointer" data-hover>
+                        <div class="text-xs font-mono text-gray-500 mb-4 magnetic-text">PROTOCOL 01: BASE STACK</div>
+                        <h3 class="text-3xl font-bold mb-4 text-white magnetic-text">Foundation (MVP Website)</h3>
+                        <p class="text-sm text-gray-400 mb-8 leading-relaxed magnetic-text">Rapid deployment for MVPs, portfolios, or interactive landing pages. Focus on cutting-edge UI/UX and simple backend API architecture.</p>
+                        <div class="text-xl font-display font-bold text-white mb-2 magnetic-text">Price On Inquiry</div>
+                    </div>
+
+                    <!-- Growth Stack (Custom) --><div class="service-card glass-panel p-10 rounded-sm transition-all duration-300 border border-white/50 cursor-pointer" data-hover>
+                         <div class="text-xs font-mono text-white mb-4 flex justify-between magnetic-text">
+                            <span>PROTOCOL 02: GROWTH STACK</span>
+                            <span class="text-green-400 animate-pulse">● ACTIVE</span>
+                        </div>
+                        <h3 class="text-3xl font-bold mb-4 text-white magnetic-text">Dynamic (Growth App)</h3>
+                        <p class="text-sm text-gray-400 mb-8 leading-relaxed magnetic-text">Full-Stack web application for growing businesses. Includes custom database design, complex authentication systems, and performance optimization.</p>
+                        <div class="text-xl font-display font-bold text-white mb-2 magnetic-text">Custom Quote</div>
+                    </div>
+
+                    <!-- Enterprise Stack (Complex) --><div class="service-card glass-panel p-10 rounded-sm transition-all duration-300 cursor-pointer" data-hover>
+                        <div class="text-xs font-mono text-gray-500 mb-4 magnetic-text">PROTOCOL 03: ENTERPRISE STACK</div>
+                        <h3 class="text-3xl font-bold mb-4 text-white magnetic-text">Sentient (Enterprise System)</h3>
+                        <p class="text-sm text-gray-400 mb-8 leading-relaxed magnetic-text">High-complexity Full-Stack solutions: microservice architecture, real-time data processing, 3D/VR integration (Three.js), and advanced machine learning features.</p>
+                        <div class="text-xl font-display font-bold text-white mb-2 magnetic-text">On Request</div>
+                    </div>
+
+                </div>
+            </div>
+
+        </main>
+
+        <!-- BOTTOM NAVIGATION DOCK --><nav class="fixed bottom-10 left-1/2 transform -translate-x-1/2 z-50">
+            <div class="glass-panel px-2 py-2 rounded-full flex gap-2">
+                <button onclick="switchView('home')" class="nav-btn px-6 py-3 rounded-full text-xs font-bold uppercase tracking-widest transition-all active magnetic-text" data-target="home" data-hover>Base</button>
+                <button onclick="switchView('work')" class="nav-btn px-6 py-3 rounded-full text-xs font-bold uppercase tracking-widest transition-all hover:bg-white/10 magnetic-text" data-target="work" data-hover>Archive</button>
+                <button onclick="switchView('services')" class="nav-btn px-6 py-3 rounded-full text-xs font-bold uppercase tracking-widest transition-all hover:bg-white/10 magnetic-text" data-target="services" data-hover>System</button>
+            </div>
+        </nav>
+
+    </div>
+
+    <script>
+        // --- 1. INTRO ANIMATION (The "Wow" Factor) ---
+        function startIntro() {
+            const counter = document.querySelector('.loader-text');
+            const progress = document.querySelector('.loader-progress');
+            let count = 0;
+
+            const interval = setInterval(() => {
+                count += Math.floor(Math.random() * 5) + 1;
+                if(count > 100) count = 100;
+
+                counter.textContent = count + '%';
+                progress.style.width = count + '%';
+
+                if(count === 100) {
+                    clearInterval(interval);
+                    revealSite();
+                }
+            }, 30);
+        }
+
+        function revealSite() {
+            const tl = gsap.timeline();
+
+            tl.to("#preloader", {
+                yPercent: -100,
+                duration: 1.2,
+                ease: "power4.inOut",
+                delay: 0.2
+            });
+
+            tl.to(".reveal-home", {
+                y: 0,
+                duration: 1.5,
+                stagger: 0.1,
+                ease: "power4.out"
+            }, "-=0.8");
+
+            tl.to(".reveal-home-opacity", {
+                opacity: 1,
+                y: 0,
+                duration: 1,
+                stagger: 0.1
+            }, "-=1");
+        }
+
+        window.onload = startIntro;
+
+
+        // --- 2. DARK MATTER NEURAL NETWORK ANIMATION ---
+        const canvas = document.getElementById('neural-canvas');
+        const ctx = canvas.getContext('2d');
+
+        let width, height;
+        let particles = [];
+
+        // Configuration Background
+        const particleCount = 200; // Lebih banyak partikel
+        const connectionDistance = 120; // Jarak koneksi sedikit lebih pendek
+        const mouseDistance = 80; // Radius deteksi mouse lebih kecil
+        const repelForce = 5; // Gaya dorong mouse lebih kuat
+
+        let mouse = { x: null, y: null };
+        window.addEventListener('mousemove', (e) => {
+            mouse.x = e.x;
+            mouse.y = e.y;
+        });
+
+        function resize() {
+            width = canvas.width = window.innerWidth;
+            height = canvas.height = window.innerHeight;
+        }
+
+        class Particle {
+            constructor() {
+                this.x = Math.random() * width;
+                this.y = Math.random() * height;
+                this.vx = (Math.random() - 0.5) * 0.8; // Kecepatan sedikit ditingkatkan
+                this.vy = (Math.random() - 0.5) * 0.8;
+                this.size = Math.random() * 2 + 0.5; // Ukuran partikel lebih bervariasi
+                this.baseAlpha = Math.random() * 0.8 + 0.3; // Opasitas partikel lebih jelas
+            }
+
+            update() {
+                this.x += this.vx;
+                this.y += this.vy;
+
+                if(this.x < 0 || this.x > width) this.vx *= -1;
+                if(this.y < 0 || this.y > height) this.vy *= -1;
+
+                let dx = mouse.x - this.x;
+                let dy = mouse.y - this.y;
+                let distance = Math.sqrt(dx*dx + dy*dy);
+
+                if(distance < mouseDistance) {
+                    const forceDirectionX = dx / distance;
+                    const forceDirectionY = dy / distance;
+                    const force = (mouseDistance - distance) / mouseDistance;
+                    const directionX = forceDirectionX * force * repelForce;
+                    const directionY = forceDirectionY * force * repelForce;
+
+                    this.x -= directionX;
+                    this.y -= directionY;
+                }
+            }
+
+            draw() {
+                ctx.beginPath();
+                ctx.arc(this.x, this.y, this.size, 0, Math.PI * 2);
+                ctx.fillStyle = `rgba(255, 255, 255, ${this.baseAlpha})`;
+                ctx.fill();
+            }
+        }
+
+        function initParticles() {
+            resize();
+            particles = [];
+            for(let i=0; i<particleCount; i++){
+                particles.push(new Particle());
+            }
+        }
+
+        function animateNetwork() {
+            ctx.clearRect(0, 0, width, height);
+
+            for(let i=0; i<particles.length; i++){
+                particles[i].update();
+                particles[i].draw();
+
+                for(let j=i; j<particles.length; j++){
+                    let dx = particles[i].x - particles[j].x;
+                    let dy = particles[i].y - particles[j].y;
+                    let distance = Math.sqrt(dx*dx + dy*dy);
+
+                    if(distance < connectionDistance){
+                        ctx.beginPath();
+                        let opacity = 1 - (distance/connectionDistance);
+                        ctx.strokeStyle = `rgba(255, 255, 255, ${opacity * 0.4})`; // Opasitas garis lebih tebal
+                        ctx.lineWidth = 1; // Ketebalan garis ditingkatkan
+                        ctx.moveTo(particles[i].x, particles[i].y);
+                        ctx.lineTo(particles[j].x, particles[j].y);
+                        ctx.stroke();
+                    }
+                }
+            }
+            requestAnimationFrame(animateNetwork);
+        }
+
+        window.addEventListener('resize', () => {
+            resize();
+            initParticles();
+        });
+
+        initParticles();
+        animateNetwork();
+
+
+        // --- 3. VIEW LOGIC (UNCHANGED BUT ADAPTED) ---
+        function switchView(viewName) {
+            const views = document.querySelectorAll('.view-container');
+            views.forEach(v => {
+                v.classList.remove('active');
+                gsap.to(v, { opacity: 0, y: 20, duration: 0.3 });
+            });
+
+            document.querySelectorAll('.nav-btn').forEach(btn => {
+                btn.classList.remove('active');
+                if(btn.dataset.target === viewName) btn.classList.add('active');
+            });
+
+            const target = document.getElementById('view-' + viewName);
+            setTimeout(() => {
+                target.classList.add('active');
+                gsap.fromTo(target,
+                    { opacity: 0, y: 30 },
+                    { opacity: 1, y: 0, duration: 0.6, ease: "power2.out" }
+                );
+            }, 300);
+        }
+
+        // --- 4. HOVER LOGIC & MAGNETIC TEXT ---
+        const hoverImg = document.getElementById('hover-preview');
+        let isHoveringWork = false;
+
+        function showImage(url) {
+            isHoveringWork = true;
+            hoverImg.style.backgroundImage = `url(${url})`;
+            gsap.to(hoverImg, { scale: 1, opacity: 1, duration: 0.3, ease: "back.out(1.7)" });
+        }
+
+        function hideImage() {
+            isHoveringWork = false;
+            gsap.to(hoverImg, { scale: 0, opacity: 0, duration: 0.3 });
+        }
+
+        // Magnetic Text Logic
+        const magneticElements = document.querySelectorAll('.magnetic-text');
+        const magneticForce = 0.2; // Kekuatan magnetik
+
+        window.addEventListener('mousemove', (e) => {
+            // Cursor logic
+            gsap.to('.cursor-dot', { x: e.clientX, y: e.clientY, duration: 0 });
+            gsap.to('.cursor-circle', { x: e.clientX, y: e.clientY, duration: 0.15 });
+
+            // Hover image logic
+            if(isHoveringWork) {
+                gsap.to(hoverImg, {
+                    x: e.clientX,
+                    y: e.clientY,
+                    duration: 0.8,
+                    ease: "power3.out"
+                });
+            }
+
+            // Magnetic Text
+            magneticElements.forEach(el => {
+                const rect = el.getBoundingClientRect();
+                const elX = rect.left + rect.width / 2;
+                const elY = rect.top + rect.height / 2;
+
+                const dx = e.clientX - elX;
+                const dy = e.clientY - elY;
+                const distance = Math.sqrt(dx * dx + dy * dy);
+
+                if (distance < (rect.width / 2 + 50)) { // Radius deteksi magnetik
+                    gsap.to(el, {
+                        x: dx * magneticForce,
+                        y: dy * magneticForce,
+                        duration: 0.5,
+                        ease: "power2.out"
+                    });
+                } else {
+                    gsap.to(el, {
+                        x: 0,
+                        y: 0,
+                        duration: 0.6,
+                        ease: "elastic.out(1, 0.5)"
+                    });
+                }
+            });
+        });
+
+        // Cursor Hover Effects
+        document.querySelectorAll('[data-hover]').forEach(el => {
+            el.addEventListener('mouseenter', () => {
+                gsap.to('.cursor-circle', { scale: 1.5, background: 'rgba(255,255,255,0.1)', duration: 0.3 });
+            });
+            el.addEventListener('mouseleave', () => {
+                gsap.to('.cursor-circle', { scale: 1, background: 'transparent', duration: 0.3 });
+            });
+        });
+
+    </script>
+</body>
+</html>
