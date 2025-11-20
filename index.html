@@ -5,12 +5,12 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <!-- --- SEO OPTIMIZATION STRATEGY (Global & Local Keywords) --- -->
     <title>VoidC | Jasa Build Website Custom, Web App Full-Stack Terbaik (Custom Web Development Service)</title>
-
+    
     <meta name="description" content="VoidC adalah layanan jasa build website dan jasa pembuatan web aplikasi Full-Stack kustom yang profesional dan terpercaya. We are a reliable custom web development service provider, specializing in high-performance MVP, e-commerce, and Enterprise systems.">
     <meta name="keywords" content="jasa build website, jasa buat website, jasa pembuatan website, web app custom, full-stack development, website enterprise, custom web development service, full stack web application, best web developer indonesia, high-performance web app">
     <meta name="robots" content="index, follow">
-    <link rel="canonical" href="https://yourwebsite.com/"/>
-
+    <link rel="canonical" href="https://yourwebsite.com/"/> 
+    
     <!-- Open Graph (English for Global Platforms) -->
     <meta property="og:locale" content="id_ID" />
     <meta property="og:type" content="website" />
@@ -18,13 +18,13 @@
     <meta property="og:description" content="A reliable custom web development service provider, specializing in high-performance MVP, e-commerce, and Enterprise systems." />
     <meta property="og:url" content="https://yourwebsite.com/" />
     <!-- END SEO OPTIMIZATION -->
-
+    
     <!-- Fonts --><link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500&family=Syne:wght@400;600;700;800&display=swap" rel="stylesheet">
 
     <!-- Tailwind CSS --><script src="https://cdn.tailwindcss.com"></script>
-
+    
     <!-- GSAP --><script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/gsap.min.js"></script>
 
     <style>
@@ -148,7 +148,7 @@
             transform: translate(-50%, -50%);
             transition: width 0.2s, height 0.2s, background 0.2s;
         }
-
+        
         /* --- 5. WORK GALLERY --- */
         .work-list-item {
             position: relative;
@@ -164,7 +164,7 @@
             color: #fff;
             text-shadow: 0 0 20px rgba(255,255,255,0.6); /* Glow lebih kuat */
         }
-
+        
         /* Floating Image */
         .hover-image {
             position: fixed;
@@ -192,7 +192,7 @@
             color: #000;
             box-shadow: 0 0 20px rgba(255,255,255,0.6); /* Shadow lebih kuat */
         }
-
+        
         .mask-text {
             overflow: hidden;
             display: block;
@@ -223,11 +223,11 @@
 
     <!-- CURSOR --><div class="cursor-dot"></div>
     <div class="cursor-circle"></div>
-
+    
     <!-- HOVER IMAGE ELEMENT --><div class="hover-image" id="hover-preview"></div>
 
     <!-- MAIN LAYOUT --><div class="fixed inset-0 flex flex-col">
-
+        
         <!-- TOP BAR (Brand: VoidC) --><header class="flex justify-between items-center p-8 z-50 mix-blend-difference">
             <div class="text-2xl font-bold font-display tracking-tighter text-white magnetic-text" data-hover>VoidC.</div>
             <a href="https://wa.me/6287852865967?text=Hello,%20I%20want%20to%20start%20a%20project" target="_blank" class="px-6 py-2 rounded-full text-xs font-bold border border-white/30 text-white hover:bg-white hover:text-black transition-all tracking-widest uppercase magnetic-text" data-hover>
@@ -237,30 +237,40 @@
 
         <!-- CONTENT AREA --><main class="relative flex-1 w-full max-w-7xl mx-auto">
 
-            <!-- VIEW 1: HOME (Emphasized Web Service) --><div id="view-home" class="view-container active flex-col items-start justify-center text-left">
-                <h1 class="text-[11vw] leading-[0.85] font-display font-bold text-white mb-8 tracking-tighter">
-                    <span class="mask-text"><span class="reveal-home magnetic-text">CUSTOM</span></span>
-                    <span class="mask-text"><span class="reveal-home magnetic-text text-transparent bg-clip-text bg-gradient-to-r from-gray-100 to-gray-600">WEB BUILD</span></span>
-                </h1>
-                <p class="text-xl md:text-2xl text-gray-400 max-w-xl mb-12 font-light leading-relaxed reveal-home-opacity magnetic-text">
-                    We are a <span class="font-bold text-white">Full-Stack Web Application Service</span>, specializing in adaptive architecture—from simple MVP websites to complex enterprise platforms.
-                </p>
-                <div class="flex gap-6 reveal-home-opacity">
-                    <button onclick="switchView('work')" class="bg-white text-black px-10 py-4 rounded-full font-bold text-sm uppercase tracking-widest hover:scale-105 transition-transform shadow-[0_0_30px_rgba(255,255,255,0.3)] magnetic-text" data-hover>
-                        Enter Archive
-                    </button>
-                    <button onclick="switchView('services')" class="border border-white/30 text-white px-10 py-4 rounded-full font-bold text-sm uppercase tracking-widest hover:bg-white/10 transition-colors magnetic-text" data-hover>
-                        Capabilities
-                    </button>
+            <!-- VIEW 1: HOME (Emphasized Web Service - LAYOUT UPDATED) --><div id="view-home" class="view-container active items-center justify-center text-left">
+                <div class="grid grid-cols-1 md:grid-cols-2 gap-10 items-end w-full max-w-7xl px-4 md:px-8">
+                    
+                    <!-- KIRI (Left): Judul Utama -->
+                    <div class="flex flex-col justify-center min-h-[50vh] md:min-h-full">
+                        <h1 class="text-[14vw] sm:text-[12vw] md:text-[11vw] leading-[0.85] font-display font-bold text-white tracking-tighter mb-4 md:mb-0">
+                            <span class="mask-text"><span class="reveal-home magnetic-text">CUSTOM</span></span>
+                            <span class="mask-text"><span class="reveal-home magnetic-text text-transparent bg-clip-text bg-gradient-to-r from-gray-100 to-gray-600">WEB BUILD</span></span>
+                        </h1>
+                    </div>
+                    
+                    <!-- KANAN (Right): Deskripsi dan Tombol -->
+                    <div class="flex flex-col justify-end min-h-[50vh] pt-4 md:min-h-full">
+                        <p class="text-xl md:text-2xl text-gray-400 max-w-lg mb-12 font-light leading-relaxed reveal-home-opacity magnetic-text">
+                            We are a <span class="font-bold text-white">Full-Stack Web Application Service</span>, specializing in adaptive architecture—from simple MVP websites to complex enterprise platforms.
+                        </p>
+                        <div class="flex gap-6 reveal-home-opacity">
+                            <button onclick="switchView('work')" class="bg-white text-black px-10 py-4 rounded-full font-bold text-sm uppercase tracking-widest hover:scale-105 transition-transform shadow-[0_0_30px_rgba(255,255,255,0.3)] magnetic-text" data-hover>
+                                Enter Archive
+                            </button>
+                            <button onclick="switchView('services')" class="border border-white/30 text-white px-10 py-4 rounded-full font-bold text-sm uppercase tracking-widest hover:bg-white/10 transition-colors magnetic-text" data-hover>
+                                Capabilities
+                            </button>
+                        </div>
+                    </div>
                 </div>
             </div>
 
             <!-- VIEW 2: WORK (Interactive) --><div id="view-work" class="view-container flex-col justify-center items-start">
                 <div class="w-full max-w-5xl">
                     <h2 class="text-xs font-bold uppercase tracking-[0.5em] text-gray-500 mb-12">Selected Archives</h2>
-
-                    <!-- List Item 1 --><div class="work-list-item group py-10 flex justify-between items-center"
-                         onmouseenter="showImage('https://images.unsplash.com/photo-1550684848-fac1c5b4e853?q=80&w=2000&auto=format&fit=crop')"
+                    
+                    <!-- List Item 1 --><div class="work-list-item group py-10 flex justify-between items-center" 
+                         onmouseenter="showImage('https://images.unsplash.com/photo-1550684848-fac1c5b4e853?q=80&w=2000&auto=format&fit=crop')" 
                          onmouseleave="hideImage()"
                          onclick="window.open('https://wa.me/6287852865967?text=I%20like%20the%20Project%20Obsidian', '_blank')"
                          data-hover>
@@ -268,8 +278,8 @@
                         <span class="text-sm font-mono text-gray-600 group-hover:text-white">WEB / AI</span>
                     </div>
 
-                    <!-- List Item 2 --><div class="work-list-item group py-10 flex justify-between items-center"
-                         onmouseenter="showImage('https://images.unsplash.com/photo-1511447333015-45b65e60f6d5?q=80&w=2000&auto=format&fit=crop')"
+                    <!-- List Item 2 --><div class="work-list-item group py-10 flex justify-between items-center" 
+                         onmouseenter="showImage('https://images.unsplash.com/photo-1511447333015-45b65e60f6d5?q=80&w=2000&auto=format&fit=crop')" 
                          onmouseleave="hideImage()"
                          onclick="window.open('https://wa.me/6287852865967?text=I%20like%20the%20Project%20Nebula', '_blank')"
                          data-hover>
@@ -277,8 +287,8 @@
                         <span class="text-sm font-mono text-gray-600 group-hover:text-white">IMMERSIVE</span>
                     </div>
 
-                    <!-- List Item 3 --><div class="work-list-item group py-10 flex justify-between items-center"
-                         onmouseenter="showImage('https://images.unsplash.com/photo-1550751827-4bd374c3f58b?q=80&w=2000&auto=format&fit=crop')"
+                    <!-- List Item 3 --><div class="work-list-item group py-10 flex justify-between items-center" 
+                         onmouseenter="showImage('https://images.unsplash.com/photo-1550751827-4bd374c3f58b?q=80&w=2000&auto=format&fit=crop')" 
                          onmouseleave="hideImage()"
                          onclick="window.open('https://wa.me/6287852865967?text=I%20like%20the%20Project%20Cybercore', '_blank')"
                          data-hover>
@@ -286,8 +296,8 @@
                         <span class="text-sm font-mono text-gray-600 group-hover:text-white">FINANCE</span>
                     </div>
 
-                    <!-- List Item 4 --><div class="work-list-item group py-10 flex justify-between items-center"
-                         onmouseenter="showImage('https://images.unsplash.com/photo-1526374965328-7f61d4dc18c5?q=80&w=2000&auto=format&fit=crop')"
+                    <!-- List Item 4 --><div class="work-list-item group py-10 flex justify-between items-center" 
+                         onmouseenter="showImage('https://images.unsplash.com/photo-1526374965328-7f61d4dc18c5?q=80&w=2000&auto=format&fit=crop')" 
                          onmouseleave="hideImage()"
                          onclick="window.open('https://wa.me/6287852865967?text=I%20like%20the%20Project%20Void', '_blank')"
                          data-hover>
@@ -300,7 +310,7 @@
             <!-- VIEW 3: SERVICES (Full-Stack Tiers Updated) --><div id="view-services" class="view-container flex-col justify-center">
                 <h2 class="text-5xl font-display font-bold mb-16 text-center text-white magnetic-text">Full-Stack Architecture Services</h2>
                 <div class="grid grid-cols-1 md:grid-cols-3 gap-8 w-full max-w-6xl">
-
+                    
                     <!-- Base Stack (MVP) --><div class="service-card glass-panel p-10 rounded-sm transition-all duration-300 cursor-pointer" data-hover>
                         <div class="text-xs font-mono text-gray-500 mb-4 magnetic-text">PROTOCOL 01: BASE STACK</div>
                         <h3 class="text-3xl font-bold mb-4 text-white magnetic-text">Foundation (MVP Website)</h3>
@@ -350,7 +360,7 @@
             const interval = setInterval(() => {
                 count += Math.floor(Math.random() * 5) + 1;
                 if(count > 100) count = 100;
-
+                
                 counter.textContent = count + '%';
                 progress.style.width = count + '%';
 
@@ -392,10 +402,10 @@
         // --- 2. DARK MATTER NEURAL NETWORK ANIMATION ---
         const canvas = document.getElementById('neural-canvas');
         const ctx = canvas.getContext('2d');
-
+        
         let width, height;
         let particles = [];
-
+        
         // Configuration Background
         const particleCount = 200; // Lebih banyak partikel
         const connectionDistance = 120; // Jarak koneksi sedikit lebih pendek
@@ -464,7 +474,7 @@
 
         function animateNetwork() {
             ctx.clearRect(0, 0, width, height);
-
+            
             for(let i=0; i<particles.length; i++){
                 particles[i].update();
                 particles[i].draw();
@@ -513,8 +523,8 @@
             const target = document.getElementById('view-' + viewName);
             setTimeout(() => {
                 target.classList.add('active');
-                gsap.fromTo(target,
-                    { opacity: 0, y: 30 },
+                gsap.fromTo(target, 
+                    { opacity: 0, y: 30 }, 
                     { opacity: 1, y: 0, duration: 0.6, ease: "power2.out" }
                 );
             }, 300);
@@ -554,12 +564,12 @@
                 });
             }
 
-            // Magnetic Text
+            // Magnetic Text (EASING DITINGKATKAN UNTUK KINERJA LEBIH BAIK/SMOOTH)
             magneticElements.forEach(el => {
                 const rect = el.getBoundingClientRect();
                 const elX = rect.left + rect.width / 2;
                 const elY = rect.top + rect.height / 2;
-
+                
                 const dx = e.clientX - elX;
                 const dy = e.clientY - elY;
                 const distance = Math.sqrt(dx * dx + dy * dy);
@@ -568,15 +578,15 @@
                     gsap.to(el, {
                         x: dx * magneticForce,
                         y: dy * magneticForce,
-                        duration: 0.5,
-                        ease: "power2.out"
+                        duration: 0.4, // Sedikit lebih cepat
+                        ease: "power3.out" // Easing yang lebih smooth
                     });
                 } else {
                     gsap.to(el, {
                         x: 0,
                         y: 0,
-                        duration: 0.6,
-                        ease: "elastic.out(1, 0.5)"
+                        duration: 0.7, // Durasi reset lebih panjang untuk efek perlambatan yang halus
+                        ease: "power4.out" // Easing reset yang sangat halus
                     });
                 }
             });
